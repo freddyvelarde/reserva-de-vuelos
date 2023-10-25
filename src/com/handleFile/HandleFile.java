@@ -26,14 +26,26 @@ public class HandleFile {
         if (!name.equals(passenger.getName()) &&
             !ci.equals(Integer.toString(passenger.getCi())) &&
             !age.equals(Integer.toString(passenger.getAge()))) {
-          newFile += name + "," + age + "," + ci + "\n";
+          newFile += name + "," + age + "," + ci + ";";
         }
       }
 
-      appendNewLine(file, newFile, false);
+      appendNewLine(file, normalizeString(newFile), false);
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+
+  public String normalizeString(String str) {
+    String line = "";
+    for (int i = 0; i < str.length() - 1; i++) {
+      if (str.charAt(i) == ';') {
+        line += "\n";
+      } else {
+        line += str.charAt(i);
+      }
+    }
+    return line;
   }
 
   public void appendNewLine(String file, String textToAppend, boolean clean) {

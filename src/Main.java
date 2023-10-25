@@ -6,8 +6,7 @@ class Main {
     Passenger p = new Passenger("Erick Silva", 23, 12345);
     HandleFile fileHandler = new HandleFile();
 
-    /* fileHandler.appendNewLine("passenger", p.parseDataToCSVFormat(), false);
-     */
+    // fileHandler.appendNewLine("passenger", p.parseDataToCSVFormat(), true);
     fileHandler.removeLine("passenger", p);
     /* System.out.println(p.parseDataToCSVFormat()); */
   }
