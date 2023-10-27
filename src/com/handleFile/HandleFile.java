@@ -7,9 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class HandleFile {
-  private String path = "./data/";
-
-  /* public HandleFile() { this.appendNewLine("passenger", "Erick Silva"); } */
+  protected String path = "./data/";
 
   public void removeLine(String file, Passenger passenger) {
     String fileName = path + "/" + file + ".csv";
