@@ -1,15 +1,17 @@
 
 import Passenger.Passenger;
+import com.handleFile.FileHandler;
 import com.storeData.DataHandler;
+import java.util.List;
 
 class Main {
   public static void main(String[] args) {
-    Passenger p = new Passenger(1, "Luis", 20);
 
-    DataHandler<Passenger> model = new DataHandler<Passenger>();
+    DataHandler model = new DataHandler();
+    String[] d = model.findOneById("passenger", "12344");
 
-    model.create("passenger", p.parseDataToCSVFormat());
-
-    System.out.println("Hello, world!");
+    for (String c : d) {
+      System.out.println(c);
+    }
   }
 }

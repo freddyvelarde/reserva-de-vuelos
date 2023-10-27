@@ -5,9 +5,30 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileHandler {
   protected String path = "./data/";
+
+  public List<String[]> readFile(String file) {
+    String fileName = path + "/" + file + ".csv";
+    List<String[]> data = new ArrayList<>();
+
+    try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+      String line;
+
+      while ((line = reader.readLine()) != null) {
+        String[] row = line.split(",");
+        data.add(row);
+      }
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    // return data.toArray(new String[0][]);
+    return data;
+  }
 
   public void removeLine(String file, Passenger passenger) {
     String fileName = path + "/" + file + ".csv";

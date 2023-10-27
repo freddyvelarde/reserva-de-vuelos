@@ -4,14 +4,18 @@ public class Passenger {
   private int ci; // unique ID
   private String name;
   private int age;
+  // private int attributeCount;
 
   public Passenger(int ci, String name, int age) {
     this.name = name;
     this.age = age;
     this.ci = ci;
+    // this.attributeCount = attributeCount;
   }
 
   public String getName() { return name; }
+
+  // public int getAttributeCount() { return attributeCount; }
 
   public void setName(String name) { this.name = name; }
 

@@ -9,4 +9,5 @@
   - [ ] Code an `removeLine()` method.
 
 - [ ] Create a data handler using the file handler
-  -
+  - [x] `create()`
+  - [x] `findManyById()`
