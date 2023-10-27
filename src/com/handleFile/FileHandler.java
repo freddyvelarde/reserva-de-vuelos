@@ -73,7 +73,6 @@ public class FileHandler {
              new BufferedWriter(new FileWriter(fileName, clean))) {
       writer.write(textToAppend);
       writer.newLine();
-      System.out.println("Line appended");
     } catch (IOException e) {
       System.err.println("An Error just ocurred: " + e.getMessage());
     }

@@ -26,7 +26,7 @@ public class Passenger {
   public void setCi(int ci) { this.ci = ci; }
   public int getCi() { return ci; }
 
-  public String parseDataToCSVFormat() { return name + "," + age + "," + ci; }
+  public String parseDataToCSVFormat() { return ci + "," + name + "," + age; }
 
   @Override
   public String toString() {
