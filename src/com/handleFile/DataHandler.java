@@ -1,5 +1,6 @@
+package com.handleFile;
 
-public class DataHandler extends HandleFile {
+public class DataHandler extends FileHandler {
 
   public DataHandler() { super(); }
 

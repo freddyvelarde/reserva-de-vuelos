@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class HandleFile {
+public class FileHandler {
   protected String path = "./data/";
 
   public void removeLine(String file, Passenger passenger) {
