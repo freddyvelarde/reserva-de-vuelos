@@ -1,10 +1,14 @@
-import com.storeData.Model;
+
+import Passenger.Passenger;
+import com.storeData.DataHandler;
 
 class Main {
   public static void main(String[] args) {
-    Model<String> m = new Model<String>("Freddy Velarde");
+    Passenger p = new Passenger(1, "Luis", 20);
 
-    System.out.println(m.getEntity());
+    DataHandler<Passenger> model = new DataHandler<Passenger>();
+
+    model.create("passenger", p.parseDataToCSVFormat());
 
     System.out.println("Hello, world!");
   }

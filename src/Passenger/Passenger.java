@@ -1,11 +1,11 @@
 package Passenger;
 
 public class Passenger {
+  private int ci; // unique ID
   private String name;
   private int age;
-  private int ci;
 
-  public Passenger(String name, int age, int ci) {
+  public Passenger(int ci, String name, int age) {
     this.name = name;
     this.age = age;
     this.ci = ci;
