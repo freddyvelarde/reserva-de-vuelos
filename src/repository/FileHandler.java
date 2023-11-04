@@ -1,5 +1,5 @@
 package repository;
-import entity.Passenger;
+import entity.passenger.Passenger;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;

@@ -1,26 +1,40 @@
 package service.impl;
+import entity.passenger.LS_NormalPassenger;
+import entity.passenger.Passenger;
 import java.util.ArrayList;
 import java.util.List;
 import repository.FileHandler;
+import service.PassengerService;
 
-public class PassengerServiceImpl extends FileHandler {
+public class PassengerServiceImpl implements PassengerService {
+  private FileHandler fileHandler = new FileHandler();
+  private String file = "passenger";
 
-  public PassengerServiceImpl() { super(); }
+  /* public PassengerServiceImpl() { super(); } */
 
-  // create methods
-  public void create(String file, String textToAppend) {
-    String[] data = textToAppend.split(",");
-
-    List<String[]> reader = this.readFile(file);
+  public Passenger createNewPassenger(Passenger passenger) {
+    List<String[]> reader = this.fileHandler.readFile(file);
 
     for (String[] rows : reader) {
-      if (rows[0].equals(data[0])) {
-        System.out.println("An error ocurred while new creating entity.");
-        return;
+      if (Integer.parseInt(rows[0]) == passenger.getCi()) {
+        System.out.println("An error ocurred while new creating entity. CI: " +
+                           passenger.getCi() + " is already in use.");
+        return null;
       }
     }
 
-    this.appendNewLine(file, textToAppend, true);
+    this.fileHandler.appendNewLine(file, passenger.parseDataToCSVFormat(),
+                                   true);
+    return passenger;
+  }
+
+  public LS_NormalPassenger getAllPassengers() {
+    List<String[]> reader = this.fileHandler.readFile(file);
+
+    LS_NormalPassenger passengers = new LS_NormalPassenger();
+    passengers.readPassengerFile(reader);
+
+    return passengers;
   }
 
   // read methods
@@ -40,23 +54,23 @@ public class PassengerServiceImpl extends FileHandler {
   //   return data;
   // }
 
-  public String[] findOneById(String file, String id) {
-    List<String[]> table = this.readFile(file);
-
-    String[] data = null;
-
-    for (String[] row : table) {
-      if (row[2].equals(id)) {
-        data = row;
-      }
-    }
-
-    return data;
-  }
-
-  // update methods
-  public void update() {}
-
-  // delete methods
-  public void delete() {}
+  /* public String[] findOneById(String file, String id) { */
+  /*   List<String[]> table = this.readFile(file); */
+  /*  */
+  /*   String[] data = null; */
+  /*  */
+  /*   for (String[] row : table) { */
+  /*     if (row[2].equals(id)) { */
+  /*       data = row; */
+  /*     } */
+  /*   } */
+  /*  */
+  /*   return data; */
+  /* } */
+  /*  */
+  /* // update methods */
+  /* public void update() {} */
+  /*  */
+  /* // delete methods */
+  /* public void delete() {} */
 }

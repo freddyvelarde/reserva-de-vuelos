@@ -1,4 +1,4 @@
-package entity;
+package entity.passenger;
 
 public class Passenger {
   private int ci; // unique ID
@@ -6,12 +6,26 @@ public class Passenger {
   private int age;
   // private int attributeCount;
 
+  public Passenger() {}
   public Passenger(int ci, String name, int age) {
     this.name = name;
     this.age = age;
     this.ci = ci;
     // this.attributeCount = attributeCount;
   }
+
+  public void mostrar() {
+    System.out.println("name : " + this.name);
+    System.out.println("age: " + this.age);
+    System.out.println("ci: " + this.ci);
+  }
+
+  // public void leer() {
+  //   Scanner lee = new Scanner(System.in);
+  //   System.out.println("Datos persona: h");
+  //   this.nom = lee.next();
+  //   this.edad = lee.nextInt();
+  // }
 
   public String getName() { return name; }
 
