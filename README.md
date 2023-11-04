@@ -1,3 +1,7 @@
+## Requirements:
+
+![Imgur](https://i.imgur.com/HHY7837.png)
+
 ## Todo:
 
 - [x] Create the project.
