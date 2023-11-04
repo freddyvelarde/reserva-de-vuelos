@@ -1,4 +1,4 @@
-package Passenger;
+package entity;
 
 public class Passenger {
   private int ci; // unique ID

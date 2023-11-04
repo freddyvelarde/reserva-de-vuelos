@@ -1,11 +1,11 @@
-package com.storeData;
-import com.handleFile.FileHandler;
+package service.impl;
 import java.util.ArrayList;
 import java.util.List;
+import repository.FileHandler;
 
-public class StoreData extends DataValidation {
+public class PassengerServiceImpl extends FileHandler {
 
-  public StoreData() { super(); }
+  public PassengerServiceImpl() { super(); }
 
   // create methods
   public void create(String file, String textToAppend) {
