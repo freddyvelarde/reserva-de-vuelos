@@ -1,17 +1,23 @@
-## Requirements:
+## Requisitos:
 
 ![Imgur](https://i.imgur.com/HHY7837.png)
 
-## Todo:
+## Estructura del Proyecto:
 
-- [x] Create the project.
-- [ ] Create a new github repository and deploy the code in it.
-- [ ] Code the handler file to store data.
+- ./src/repository --> directorio para la gestión de datos y estructuras de datos.
+- ./src/entity --> directorio para clases como pasajeros, aeropuertos, etc.
+- ./src/service --> directorio para las clases que manejan los datos.
 
-  - [x] Code an `appendLine()` method.
-    - Must avoid repeated passengers.
-  - [ ] Code an `removeLine()` method.
+## Por hacer:
 
-- [ ] Create a data handler using the file handler
-  - [x] `create()`
-  - [x] `findManyById()`
+- [x] Crear el proyecto.
+- [ ] Crear un repositorio de GitHub y desplegar el código en él.
+- [ ] Codificar el archivo del controlador para almacenar datos.
+
+  - [x] Codificar un método `appendLine()`.
+    - Debe evitar pasajeros repetidos.
+  - [ ] Codificar un método `removeLine()`.
+
+- [ ] Crear un controlador de datos utilizando el controlador de archivos.
+  - [x] `crear()`
+  - [x] `encontrarMuchosPorId()`
