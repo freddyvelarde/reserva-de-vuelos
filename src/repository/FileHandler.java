@@ -26,7 +26,6 @@ public class FileHandler {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    // return data.toArray(new String[0][]);
     return data;
   }
 
@@ -39,8 +38,6 @@ public class FileHandler {
       while ((line = reader.readLine()) != null) {
         String[] arrayLine = line.split(",");
         String ci = arrayLine[0];
-        // String name = arrayLine[1];
-        // String age = arrayLine[2];
 
         if (!ci.equals(id)) {
           newFile += line + ";";
@@ -78,7 +75,6 @@ public class FileHandler {
           newStr += line + ";";
         } else {
           newStr += textToAppend + ";";
-          // this.appendNewLine(file, textToAppend, true);
         }
       }
 
@@ -89,9 +85,8 @@ public class FileHandler {
     }
   }
 
-  public void
-  appendNewLine(String file, String textToAppend,
-                boolean clean) { // clean = false; overrite the entire file
+  // clean = false; overrite the entire file
+  public void appendNewLine(String file, String textToAppend, boolean clean) {
     String fileName = path + "/" + file + ".csv";
     try (BufferedWriter writer =
              new BufferedWriter(new FileWriter(fileName, clean))) {
