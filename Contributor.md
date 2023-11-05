@@ -7,14 +7,14 @@ A continuación, te proporcionamos una guía paso a paso para contribuir al proy
 2. Luego, clona el repositorio "forkeado" desde tu cuenta de GitHub a tu máquina local.
 
 ```sh
-git clone https://github.com/tu-nombre-de-usuario/proyecto.git
-cd proyecto
+git clone https://github.com/tu-nombre-de-usuario/reserva-de-vuelos.git
+cd reserva-de-vuelos
 ```
 
 3. Crea una nueva rama en la que trabajarás en tu código.
 
 ```sh
-git checkout -b nombre-de-tu-rama-nueva
+git switch -c nombre-de-tu-rama-nueva
 ```
 
 4. Una vez que hayas escrito y modificado tu código, debes realizar un commit.
@@ -30,7 +30,7 @@ git push -u origin nombre-de-tu-rama-nueva
 > Si quieres contribuir de nuevo, despues de haber enviado el codigo:
 
 ```sh
-git remote add upstream https://github.com/owner/test-project.git
+git remote add upstream https://github.com/freddyvelarde/reserva-de-vuelos.git
 git fetch upstream
 git checkout main
 git merge upstream/main
