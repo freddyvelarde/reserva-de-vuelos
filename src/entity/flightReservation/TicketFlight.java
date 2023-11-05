@@ -43,4 +43,9 @@ public class TicketFlight {
     System.out.println("destination: " + destination);
     System.out.println("price: " + price);
   }
+
+  public String parseDataToCSVFormat() {
+    return flightNumber + "," + ci + "," + source + "," + destination + "," +
+        price;
+  }
 }

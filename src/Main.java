@@ -1,14 +1,12 @@
-import entity.flightReservation.LS_NormalFlightReservation;
 import entity.flightReservation.TicketFlight;
+import service.impl.FlightReservationServiceImpl;
 
 class Main {
   public static void main(String[] args) {
-    TicketFlight t = new TicketFlight("1ABC", 123, "a", "b", 120);
-    TicketFlight t2 = new TicketFlight("2ABC", 123, "b", "a", 150);
+    TicketFlight t = new TicketFlight("1ABz", 124, "a", "b", 130);
 
-    LS_NormalFlightReservation l = new LS_NormalFlightReservation();
-    l.adiFinal(t);
-    l.adiFinal(t2);
-    l.mostrar();
+    FlightReservationServiceImpl f = new FlightReservationServiceImpl();
+
+    f.getAllReservationsByPassenger(124).mostrar();
   }
 }
