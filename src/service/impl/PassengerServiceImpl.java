@@ -37,6 +37,14 @@ public class PassengerServiceImpl implements PassengerService {
     return passengers;
   }
 
+  public Passenger updatePassenger(Passenger newPassenger) {
+
+    this.fileHandler.updateLine(this.file,
+                                Integer.toString(newPassenger.getCi()),
+                                newPassenger.parseDataToCSVFormat());
+    return newPassenger;
+  }
+
   // read methods
   // public List<String[]> findManyById(String file, String id) {
   //   List<String[]> table = this.readFile(file);

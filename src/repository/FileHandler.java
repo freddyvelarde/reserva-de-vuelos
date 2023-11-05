@@ -67,7 +67,33 @@ public class FileHandler {
     return line;
   }
 
-  public void appendNewLine(String file, String textToAppend, boolean clean) {
+  public void updateLine(String file, String id, String textToAppend) {
+    String fileName = path + "/" + file + ".csv";
+
+    try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+      String line;
+
+      String newStr = "";
+      while ((line = reader.readLine()) != null) {
+        String[] data = line.split(",");
+        if (!data[0].equals(id)) {
+          newStr += line + ";";
+        } else {
+          newStr += textToAppend + ";";
+          // this.appendNewLine(file, textToAppend, true);
+        }
+      }
+
+      appendNewLine(file, normalizeString(newStr), false); //
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public void
+  appendNewLine(String file, String textToAppend,
+                boolean clean) { // clean = false; overrite the entire file
     String fileName = path + "/" + file + ".csv";
     try (BufferedWriter writer =
              new BufferedWriter(new FileWriter(fileName, clean))) {
