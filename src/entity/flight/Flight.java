@@ -4,17 +4,19 @@ public class Flight {
   private String flightNumber;
   private String departureAirport;
   private String arrivalAirport;
-  private String date;
+  private String departureTime;
 
   public Flight(String flightNumber, String departureAirport,
-                String arrivalAirport, String date) {
+                String arrivalAirport, String departureTime) {
     this.flightNumber = flightNumber;
     this.departureAirport = departureAirport;
     this.arrivalAirport = arrivalAirport;
-    this.date = date;
+    this.departureTime = departureTime;
   }
-  public void setDate(String date) { this.date = date; }
-  public String getDate() { return date; }
+  public void setDepartureTime(String departureTime) {
+    this.departureTime = departureTime;
+  }
+  public String getDepartureTime() { return departureTime; }
 
   public String getFlightNumber() { return flightNumber; }
 
@@ -36,13 +38,13 @@ public class Flight {
 
   public String parseDataToCSVFormat() {
     return flightNumber + "," + departureAirport + "," + arrivalAirport + "," +
-        date;
+        departureTime;
   }
   /* @Override */
   public void mostrar() {
     System.out.println("flight number: " + flightNumber);
     System.out.println("departure airport: " + departureAirport);
     System.out.println("arrival airport: " + arrivalAirport);
-    System.out.println("date: " + date);
+    System.out.println("departureTime: " + departureTime);
   }
 }
