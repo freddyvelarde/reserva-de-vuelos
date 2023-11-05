@@ -1,15 +1,12 @@
 import entity.flightHistory.FlightHistory;
 import entity.flightHistory.LS_NormalFlightHistory;
+import service.impl.FlightHistoryServiceImpl;
 
 class Main {
   public static void main(String[] args) {
-    FlightHistory f = new FlightHistory("123", "1ABC");
-    FlightHistory f2 = new FlightHistory("124", "2ABC");
+    FlightHistoryServiceImpl h = new FlightHistoryServiceImpl();
 
-    LS_NormalFlightHistory l = new LS_NormalFlightHistory();
-
-    l.adiFinal(f);
-    l.adiFinal(f2);
+    LS_NormalFlightHistory l = h.getFlightHistoryByPassenger(123);
 
     l.mostrar();
   }

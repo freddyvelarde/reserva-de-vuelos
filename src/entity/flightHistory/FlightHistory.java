@@ -13,7 +13,7 @@ public class FlightHistory {
   public void setFlightNumber(String flightNumber) {
     this.flightNumber = flightNumber;
   }
-  public String getCi() { return ci; }
+  public int getCi() { return Integer.parseInt(ci); }
   public String getFlightNumber() { return flightNumber; }
 
   public void mostrar() {

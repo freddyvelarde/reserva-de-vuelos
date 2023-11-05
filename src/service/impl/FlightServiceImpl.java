@@ -4,8 +4,9 @@ import entity.flight.Flight;
 import entity.flight.LS_NormalFlight;
 import java.util.List;
 import repository.FileHandler;
+import service.FlightService;
 
-public class FlightServiceImpl {
+public class FlightServiceImpl implements FlightService {
   private String fileName = "flight";
   private FileHandler fileHandler = new FileHandler();
 
