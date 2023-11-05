@@ -30,7 +30,7 @@ public class FileHandler {
     return data;
   }
 
-  public void removeLine(String file, Passenger passenger) {
+  public void removeLine(String file, String id) {
     String fileName = path + "/" + file + ".csv";
     try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
       String line;
@@ -38,14 +38,12 @@ public class FileHandler {
 
       while ((line = reader.readLine()) != null) {
         String[] arrayLine = line.split(",");
-        String name = arrayLine[0];
-        String age = arrayLine[1];
-        String ci = arrayLine[2];
+        String ci = arrayLine[0];
+        // String name = arrayLine[1];
+        // String age = arrayLine[2];
 
-        if (!name.equals(passenger.getName()) &&
-            !ci.equals(Integer.toString(passenger.getCi())) &&
-            !age.equals(Integer.toString(passenger.getAge()))) {
-          newFile += name + "," + age + "," + ci + ";";
+        if (!ci.equals(id)) {
+          newFile += line + ";";
         }
       }
 

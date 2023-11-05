@@ -45,6 +45,10 @@ public class PassengerServiceImpl implements PassengerService {
     return newPassenger;
   }
 
+  public void deletePassenger(Passenger passenger) {
+    this.fileHandler.removeLine(this.file, Integer.toString(passenger.getCi()));
+  }
+
   // read methods
   // public List<String[]> findManyById(String file, String id) {
   //   List<String[]> table = this.readFile(file);

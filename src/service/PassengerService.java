@@ -8,4 +8,6 @@ public interface PassengerService {
   LS_NormalPassenger getAllPassengers();
 
   Passenger updatePassenger(Passenger newPassenger);
+
+  void deletePassenger(Passenger passenger);
 }
