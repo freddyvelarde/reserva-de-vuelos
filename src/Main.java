@@ -1,13 +1,16 @@
-import entity.flight.Flight;
-/* import entity.flight.LS_NormalFlight; */
-import service.impl.FlightServiceImpl;
+import entity.flightHistory.FlightHistory;
+import entity.flightHistory.LS_NormalFlightHistory;
 
 class Main {
   public static void main(String[] args) {
-    Flight f2 = new Flight("2ABC", "B", "A", "06/11/2023");
+    FlightHistory f = new FlightHistory("123", "1ABC");
+    FlightHistory f2 = new FlightHistory("124", "2ABC");
 
-    FlightServiceImpl flights = new FlightServiceImpl();
+    LS_NormalFlightHistory l = new LS_NormalFlightHistory();
 
-    flights.getAllFlights().mostrar();
+    l.adiFinal(f);
+    l.adiFinal(f2);
+
+    l.mostrar();
   }
 }
