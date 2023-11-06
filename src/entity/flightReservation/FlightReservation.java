@@ -1,19 +1,26 @@
 package entity.flightReservation;
 
-public class TicketFlight {
+public class FlightReservation {
   private String flightNumber;
   private int ci;
   private String source;
   private String destination;
   private double price;
+  private int numberOfSeats;
 
-  public TicketFlight(String flightNumber, int ci, String source,
-                      String destination, double price) {
+  public FlightReservation(String flightNumber, int ci, String source,
+                           String destination, double price,
+                           int numberOfSeats) {
     this.flightNumber = flightNumber;
     this.ci = ci;
     this.source = source;
     this.destination = destination;
     this.price = price;
+    this.numberOfSeats = numberOfSeats;
+  }
+  public int getNumberOfSeats() { return numberOfSeats; }
+  public void setNumberOfSeats(int numberOfSeats) {
+    this.numberOfSeats = numberOfSeats;
   }
 
   public String getFlightNumber() { return flightNumber; }
@@ -46,6 +53,6 @@ public class TicketFlight {
 
   public String parseDataToCSVFormat() {
     return flightNumber + "," + ci + "," + source + "," + destination + "," +
-        price;
+        price + "," + numberOfSeats;
   }
 }

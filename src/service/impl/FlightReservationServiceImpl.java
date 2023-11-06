@@ -1,8 +1,8 @@
 package service.impl;
 
+import entity.flightReservation.FlightReservation;
 import entity.flightReservation.LS_NormalFlightReservation;
-import entity.flightReservation.NodeTicketFlight;
-import entity.flightReservation.TicketFlight;
+import entity.flightReservation.NodeFlightReservation;
 import java.util.List;
 import repository.FileHandler;
 import service.FlightReservationService;
@@ -11,11 +11,12 @@ public class FlightReservationServiceImpl implements FlightReservationService {
   private String fileName = "flight-reservation";
   private FileHandler fileHandler = new FileHandler();
 
-  public TicketFlight createNewReservation(TicketFlight newTicketFlight) {
+  public FlightReservation
+  createNewReservation(FlightReservation newFlightReservation) {
     this.fileHandler.appendNewLine(
-        fileName, newTicketFlight.parseDataToCSVFormat(), true);
+        fileName, newFlightReservation.parseDataToCSVFormat(), true);
 
-    return newTicketFlight;
+    return newFlightReservation;
   }
 
   public LS_NormalFlightReservation flightHistoryByPassenger(int ci) {
@@ -23,10 +24,10 @@ public class FlightReservationServiceImpl implements FlightReservationService {
     LS_NormalFlightReservation reservationsByPassenger =
         new LS_NormalFlightReservation();
 
-    NodeTicketFlight currentNode = reservations.getHead();
+    NodeFlightReservation currentNode = reservations.getHead();
 
     while (currentNode != null) {
-      TicketFlight data = currentNode.getValue();
+      FlightReservation data = currentNode.getValue();
       if (data.getCi() == ci) {
         reservationsByPassenger.adiFinal(data);
       }

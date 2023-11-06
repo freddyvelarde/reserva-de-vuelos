@@ -1,11 +1,12 @@
 package service;
 
+import entity.flightReservation.FlightReservation;
 import entity.flightReservation.LS_NormalFlightReservation;
-import entity.flightReservation.TicketFlight;
 
 public interface FlightReservationService {
 
-  TicketFlight createNewReservation(TicketFlight newTicketFlight);
+  FlightReservation
+  createNewReservation(FlightReservation newFlightReservation);
 
   LS_NormalFlightReservation getAllReservations();
 

@@ -1,8 +1,8 @@
 package entity.flightReservation;
 
+import entity.flightReservation.FlightReservation;
 import entity.flightReservation.ListSimpleFlightReservation;
-import entity.flightReservation.NodeTicketFlight;
-import entity.flightReservation.TicketFlight;
+import entity.flightReservation.NodeFlightReservation;
 import java.util.List;
 
 public class LS_NormalFlightReservation extends ListSimpleFlightReservation {
@@ -12,31 +12,31 @@ public class LS_NormalFlightReservation extends ListSimpleFlightReservation {
 
   public void readFlightReservationFile(List<String[]> flightFile) {
     for (String[] data : flightFile) {
-      TicketFlight flightReservation =
-          new TicketFlight(data[0], Integer.parseInt(data[1]), data[2], data[3],
-                           Double.parseDouble(data[4]));
+      FlightReservation flightReservation = new FlightReservation(
+          data[0], Integer.parseInt(data[1]), data[2], data[3],
+          Double.parseDouble(data[4]), Integer.parseInt(data[5]));
       this.adiFinal(flightReservation);
     }
   }
 
   public boolean esVacia() { return this.head == null; }
 
-  public void adiPrincipio(TicketFlight newValue) {
-    NodeTicketFlight newNode = new NodeTicketFlight(newValue);
+  public void adiPrincipio(FlightReservation newValue) {
+    NodeFlightReservation newNode = new NodeFlightReservation(newValue);
     newNode.setNext(this.head);
     head = newNode;
     size++;
   }
 
-  public void adiFinal(TicketFlight newValue) {
-    NodeTicketFlight newNode = new NodeTicketFlight(newValue);
+  public void adiFinal(FlightReservation newValue) {
+    NodeFlightReservation newNode = new NodeFlightReservation(newValue);
 
     if (this.esVacia()) {
       head = newNode;
       size++;
       return;
     }
-    NodeTicketFlight currentNode = head;
+    NodeFlightReservation currentNode = head;
 
     while (currentNode.getNext() != null) {
       currentNode = currentNode.getNext();
@@ -47,19 +47,19 @@ public class LS_NormalFlightReservation extends ListSimpleFlightReservation {
   }
 
   public void mostrar() {
-    NodeTicketFlight currentNode = head;
+    NodeFlightReservation currentNode = head;
     int i = 1;
 
     while (currentNode != null) {
       currentNode.getValue().mostrar();
-      System.out.println("Node nro: " + i);
+      System.out.println("NodeFlightReservation nro: " + i);
       currentNode = currentNode.getNext();
       i++;
     }
   }
 
-  public NodeTicketFlight eliPrincipio() {
-    NodeTicketFlight firstElement = new NodeTicketFlight();
+  public NodeFlightReservation eliPrincipio() {
+    NodeFlightReservation firstElement = new NodeFlightReservation();
 
     if (!this.esVacia()) {
       firstElement = head;
@@ -70,18 +70,18 @@ public class LS_NormalFlightReservation extends ListSimpleFlightReservation {
     return firstElement;
   }
 
-  public NodeTicketFlight eliFinal() {
+  public NodeFlightReservation eliFinal() {
     if (this.head == null)
       return null;
 
     if (size == 1) {
-      NodeTicketFlight value = head;
+      NodeFlightReservation value = head;
       head = null;
       size--;
       return value;
     }
 
-    NodeTicketFlight currentNode = head;
+    NodeFlightReservation currentNode = head;
 
     while (currentNode.getNext() != null &&
            currentNode.getNext().getNext() != null) {
@@ -89,53 +89,16 @@ public class LS_NormalFlightReservation extends ListSimpleFlightReservation {
     }
 
     if (currentNode.getNext() == null) {
-      NodeTicketFlight value = head;
+      NodeFlightReservation value = head;
       head = null;
       size--;
       return value;
     }
-    NodeTicketFlight value = currentNode.getNext();
+    NodeFlightReservation value = currentNode.getNext();
     currentNode.setNext(null);
     size--;
     return value;
   }
-  // public NodeTicketFlight eliFinal() {
-  //   NodeTicketFlight lastElement = new NodeTicketFlight();
-  //
-  //   if (!this.esVacia()) {
-  //     if (this.nroNodos() == 1) {
-  //       lastElement = head;
-  //       head = null;
-  //     } else {
-  //       NodeTicketFlight currentNode_1 = head;
-  //       NodeTicketFlight currentNode_2 = head;
-  //
-  //       while (currentNode_1.getNext() != null) {
-  //         currentNode_2 = currentNode_1;
-  //         currentNode_1 = currentNode_1.getNext();
-  //       }
-  //       lastElement = currentNode_1;
-  //       currentNode_2.setNext(null);
-  //     }
-  //   }
-  //   return lastElement;
-  // }
-
-  /* public void leer1(int n) { */
-  /*   for (int i = 1; i <= n; i++) { */
-  /*     NodeTicketFlight z = new NodeTicketFlight(); */
-  /*     z.leer(); */
-  /*     adiPrincipio(z); */
-  /*   } */
-  /* } */
-  /*  */
-  /* public void leer2(int n) { */
-  /*   for (int i = 1; i <= n; i++) { */
-  /*     NodeTicketFlight z = new NodeTicketFlight(); */
-  /*     z.leer(); */
-  /*     adiFinal(z); */
-  /*   } */
-  /* } */
 
   public int nroNodos() { return size; }
 }

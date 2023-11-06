@@ -1,13 +1,13 @@
 package entity.flightReservation;
 
-import entity.flightReservation.NodeTicketFlight;
+import entity.flightReservation.NodeFlightReservation;
 
 public class ListSimpleFlightReservation {
-  protected NodeTicketFlight head;
+  protected NodeFlightReservation head;
 
   public ListSimpleFlightReservation() { head = null; }
 
-  public NodeTicketFlight getHead() { return head; }
+  public NodeFlightReservation getHead() { return head; }
 
-  public void setHead(NodeTicketFlight head) { this.head = head; }
+  public void setHead(NodeFlightReservation head) { this.head = head; }
 }
