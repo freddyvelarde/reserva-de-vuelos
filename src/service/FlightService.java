@@ -7,4 +7,6 @@ public interface FlightService {
   Flight createNewFlight(Flight newFlight);
 
   LS_NormalFlight getAllFlights();
+
+  void updateNumberOfSeats(int numberOfSeats, String flightNumber);
 }

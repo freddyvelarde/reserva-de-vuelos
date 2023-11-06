@@ -16,6 +16,21 @@ public class FlightServiceImpl implements FlightService {
     return newFlight;
   }
 
+  public void updateNumberOfSeats(int numberOfSeats, String flightNumber) {
+    List<String[]> flightCSV = this.fileHandler.readFile(fileName);
+    Flight flight = null;
+    for (String[] data : flightCSV) {
+      if (data[0].equals(flightNumber)) {
+        flight = new Flight(data[0], data[1], data[2], data[3],
+                            Integer.parseInt(data[4]));
+        flight.updateNumberOfSeats(numberOfSeats);
+      }
+    }
+    if (flight != null)
+      this.fileHandler.updateLine(fileName, flightNumber,
+                                  flight.parseDataToCSVFormat());
+  }
+
   public LS_NormalFlight getAllFlights() {
     List<String[]> flightCsv = fileHandler.readFile(fileName);
 

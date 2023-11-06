@@ -12,7 +12,8 @@ public class LS_NormalFlight extends ListSimpleFlight {
 
   public void readFlightFile(List<String[]> flightFile) {
     for (String[] data : flightFile) {
-      Flight flight = new Flight(data[0], data[1], data[2], data[3]);
+      Flight flight = new Flight(data[0], data[1], data[2], data[3],
+                                 Integer.parseInt(data[4]));
 
       this.adiFinal(flight);
     }
