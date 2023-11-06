@@ -9,5 +9,5 @@ public interface FlightReservationService {
 
   LS_NormalFlightReservation getAllReservations();
 
-  LS_NormalFlightReservation getAllReservationsByPassenger(int ci);
+  LS_NormalFlightReservation flightHistoryByPassenger(int ci);
 }

@@ -18,7 +18,7 @@ public class FlightReservationServiceImpl implements FlightReservationService {
     return newTicketFlight;
   }
 
-  public LS_NormalFlightReservation getAllReservationsByPassenger(int ci) {
+  public LS_NormalFlightReservation flightHistoryByPassenger(int ci) {
     LS_NormalFlightReservation reservations = getAllReservations();
     LS_NormalFlightReservation reservationsByPassenger =
         new LS_NormalFlightReservation();

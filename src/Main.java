@@ -1,12 +1,12 @@
 import entity.flight.Flight;
+import service.impl.FlightReservationServiceImpl;
 import service.impl.FlightServiceImpl;
 
 class Main {
   public static void main(String[] args) {
-    Flight f = new Flight("ABC", "a", "b", "06/11/2023", 250);
 
-    FlightServiceImpl flights = new FlightServiceImpl();
+    FlightReservationServiceImpl r = new FlightReservationServiceImpl();
 
-    flights.updateNumberOfSeats(150, "BCD");
+    r.flightHistoryByPassenger(123).mostrar();
   }
 }
