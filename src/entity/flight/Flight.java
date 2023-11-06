@@ -5,14 +5,34 @@ public class Flight {
   private String departureAirport;
   private String arrivalAirport;
   private String departureTime;
+  private int numberOfSeats;
 
   public Flight(String flightNumber, String departureAirport,
-                String arrivalAirport, String departureTime) {
+                String arrivalAirport, String departureTime,
+                int numberOfSeats) {
     this.flightNumber = flightNumber;
     this.departureAirport = departureAirport;
     this.arrivalAirport = arrivalAirport;
     this.departureTime = departureTime;
+    this.numberOfSeats = numberOfSeats;
   }
+  public Flight() {}
+
+  public int updateNumberOfSeats(int numberOfSeatsBuyed) {
+    if (numberOfSeats >= 1)
+      this.numberOfSeats = this.numberOfSeats - numberOfSeatsBuyed;
+
+    if (numberOfSeats <= 0)
+      this.numberOfSeats = 0;
+
+    return this.numberOfSeats;
+  }
+
+  public int getNumberOfSeats() { return numberOfSeats; }
+  public void setNumberOfSeats(int numberOfSeats) {
+    this.numberOfSeats = numberOfSeats;
+  }
+
   public void setDepartureTime(String departureTime) {
     this.departureTime = departureTime;
   }
@@ -38,13 +58,14 @@ public class Flight {
 
   public String parseDataToCSVFormat() {
     return flightNumber + "," + departureAirport + "," + arrivalAirport + "," +
-        departureTime;
+        departureTime + "," + numberOfSeats;
   }
-  /* @Override */
+
   public void mostrar() {
     System.out.println("flight number: " + flightNumber);
     System.out.println("departure airport: " + departureAirport);
     System.out.println("arrival airport: " + arrivalAirport);
     System.out.println("departureTime: " + departureTime);
+    System.out.println("number of seats: " + numberOfSeats);
   }
 }
