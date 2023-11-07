@@ -12,7 +12,6 @@ public class ReservationController {
       new FlightReservationServiceImpl();
 
   public void createNewReservation(FlightReservation flightReservation) {
-    System.out.println(":0");
     FlightServiceImpl flights = new FlightServiceImpl();
 
     LS_NormalFlight allAvailableFlights = flights.getAllFlights();
@@ -24,11 +23,17 @@ public class ReservationController {
 
       if (flight.getFlightNumber().equals(
               flightReservation.getFlightNumber())) {
-        this.reservations.createNewReservation(flightReservation);
+        if (flight.getNumberOfSeats() >= flightReservation.getSeats()) {
+          this.reservations.createNewReservation(flightReservation);
 
-        flights.updateNumberOfSeats(flightReservation.getSeats(),
-                                    flightReservation.getFlightNumber());
-        System.out.println("new reservations just created successfully.");
+          flights.updateNumberOfSeats(flightReservation.getSeats(),
+                                      flightReservation.getFlightNumber());
+          System.out.println("new reservations just created successfully.");
+        } else {
+          System.out.println("No seats available, for flight: " +
+                             flightReservation.getFlightNumber());
+        }
+        break;
       }
 
       currentNode = currentNode.getNext();
