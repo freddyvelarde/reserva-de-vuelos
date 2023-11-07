@@ -3,6 +3,8 @@ package controller;
 import entity.flight.Flight;
 import entity.flight.LS_NormalFlight;
 import entity.flight.NodeFlight;
+import helper.CurrentDate;
+import helper.CurrentTime;
 import service.impl.FlightServiceImpl;
 
 public class FlightController {
@@ -32,5 +34,26 @@ public class FlightController {
   }
   public LS_NormalFlight getAllFlights() {
     return this.flightsService.getAllFlights();
+  }
+
+  public LS_NormalFlight getAvailableFlights() {
+    LS_NormalFlight allFlights = this.flightsService.getAllFlights();
+    LS_NormalFlight availableFlights = new LS_NormalFlight();
+    NodeFlight currentNode = allFlights.getHead();
+
+    String currentTime = new CurrentTime().getCurrentTime();
+    String currentDate = new CurrentDate().getCurrentDate();
+
+    while (currentNode != null) {
+
+      Flight flight = currentNode.getValue();
+
+      if (flight.getSites() > 0) {
+        availableFlights.adiFinal(flight);
+      }
+
+      currentNode = currentNode.getNext();
+    }
+    return availableFlights;
   }
 }
