@@ -13,8 +13,8 @@ public class LS_NormalFlightReservation extends ListSimpleFlightReservation {
   public void readFlightReservationFile(List<String[]> flightFile) {
     for (String[] data : flightFile) {
       FlightReservation flightReservation = new FlightReservation(
-          data[0], Integer.parseInt(data[1]), data[2], data[3],
-          Double.parseDouble(data[4]), Integer.parseInt(data[5]));
+          data[0], Integer.parseInt(data[1]), Double.parseDouble(data[2]),
+          Integer.parseInt(data[3]));
       this.adiFinal(flightReservation);
     }
   }

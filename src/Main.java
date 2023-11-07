@@ -1,11 +1,11 @@
-import controller.ReservationController;
-import entity.flightReservation.FlightReservation;
+import entity.passenger.Passenger;
+import service.impl.PassengerServiceImpl;
 
 class Main {
   public static void main(String[] args) {
-    ReservationController r = new ReservationController();
-    FlightReservation f = new FlightReservation("ABC", 123, "a", "b", 120, 270);
+    PassengerServiceImpl p = new PassengerServiceImpl();
+    Passenger passenger1 = new Passenger(13827575, "Freddy Velarde", 21);
 
-    r.createNewReservation(f);
+    p.getAllPassengers().mostrar();
   }
 }

@@ -4,14 +4,12 @@ public class Passenger {
   private int ci; // unique ID
   private String name;
   private int age;
-  // private int attributeCount;
 
   public Passenger() {}
   public Passenger(int ci, String name, int age) {
     this.name = name;
     this.age = age;
     this.ci = ci;
-    // this.attributeCount = attributeCount;
   }
 
   public void mostrar() {
@@ -20,16 +18,7 @@ public class Passenger {
     System.out.println("ci: " + this.ci);
   }
 
-  // public void leer() {
-  //   Scanner lee = new Scanner(System.in);
-  //   System.out.println("Datos persona: h");
-  //   this.nom = lee.next();
-  //   this.edad = lee.nextInt();
-  // }
-
   public String getName() { return name; }
-
-  // public int getAttributeCount() { return attributeCount; }
 
   public void setName(String name) { this.name = name; }
 
@@ -41,10 +30,4 @@ public class Passenger {
   public int getCi() { return ci; }
 
   public String parseDataToCSVFormat() { return ci + "," + name + "," + age; }
-
-  @Override
-  public String toString() {
-    return "Passenger{"
-        + "name='" + name + '\'' + ", age=" + age + '}';
-  }
 }

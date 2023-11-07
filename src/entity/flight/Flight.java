@@ -1,18 +1,17 @@
 package entity.flight;
 
 public class Flight {
-  private String flightNumber;
-  private String departureAirport;
-  private String arrivalAirport;
-  private String departureTime;
-  private int numberOfSeats;
+  protected String flightNumber;
+  protected String source;
+  protected String destination;
+  protected String departureTime;
+  protected int numberOfSeats;
 
-  public Flight(String flightNumber, String departureAirport,
-                String arrivalAirport, String departureTime,
-                int numberOfSeats) {
+  public Flight(String flightNumber, String source, String destination,
+                String departureTime, int numberOfSeats) {
     this.flightNumber = flightNumber;
-    this.departureAirport = departureAirport;
-    this.arrivalAirport = arrivalAirport;
+    this.source = source;
+    this.destination = destination;
     this.departureTime = departureTime;
     this.numberOfSeats = numberOfSeats;
   }
@@ -44,27 +43,25 @@ public class Flight {
     this.flightNumber = flightNumber;
   }
 
-  public String getDepartureAirport() { return departureAirport; }
+  public String getSource() { return source; }
 
-  public void setDepartureAirport(String departureAirport) {
-    this.departureAirport = departureAirport;
-  }
+  public void setSource(String source) { this.source = source; }
 
-  public String getArrivalAirport() { return arrivalAirport; }
+  public String getDestination() { return destination; }
 
-  public void setArrivalAirport(String arrivalAirport) {
-    this.arrivalAirport = arrivalAirport;
+  public void setDestination(String destination) {
+    this.destination = destination;
   }
 
   public String parseDataToCSVFormat() {
-    return flightNumber + "," + departureAirport + "," + arrivalAirport + "," +
+    return flightNumber + "," + source + "," + destination + "," +
         departureTime + "," + numberOfSeats;
   }
 
   public void mostrar() {
     System.out.println("flight number: " + flightNumber);
-    System.out.println("departure airport: " + departureAirport);
-    System.out.println("arrival airport: " + arrivalAirport);
+    System.out.println("departure airport: " + source);
+    System.out.println("arrival airport: " + destination);
     System.out.println("departureTime: " + departureTime);
     System.out.println("number of seats: " + numberOfSeats);
   }
