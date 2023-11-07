@@ -45,7 +45,7 @@ public class FlightController {
 
     while (currentNode != null) {
       Flight flight = currentNode.getValue();
-      if (date.verifyDate(flight.getDepartureTime())) {
+      if (date.verifyDate(flight.getDepartureDate())) {
         if (flight.getSites() > 0) {
           availableFlights.adiFinal(flight);
         }

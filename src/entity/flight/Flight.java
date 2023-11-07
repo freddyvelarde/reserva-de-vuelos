@@ -40,10 +40,10 @@ public class Flight {
   public int getSites() { return sites; }
   public void setSites(int sites) { this.sites = sites; }
 
-  public void setDepartureTime(String departureDate) {
+  public void setDepartureDate(String departureDate) {
     this.departureDate = departureDate;
   }
-  public String getDepartureTime() { return departureDate; }
+  public String getDepartureDate() { return departureDate; }
 
   public String getFlightNumber() { return flightNumber; }
 

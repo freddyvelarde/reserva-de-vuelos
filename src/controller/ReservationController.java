@@ -82,7 +82,7 @@ public class ReservationController {
     while (currentNode != null) {
       Flight flight = currentNode.getValue();
 
-      if (flight.getDepartureTime().equals(date))
+      if (flight.getDepartureDate().equals(date))
         flightsByDate.adiFinal(flight);
 
       currentNode = currentNode.getNext();
