@@ -40,16 +40,19 @@ public class FlightController {
     LS_NormalFlight allFlights = this.flightsService.getAllFlights();
     LS_NormalFlight availableFlights = new LS_NormalFlight();
     NodeFlight currentNode = allFlights.getHead();
-
-    String currentTime = new CurrentTime().getCurrentTime();
-    String currentDate = new CurrentDate().getCurrentDate();
+    CurrentTime time = new CurrentTime();
+    CurrentDate date = new CurrentDate();
 
     while (currentNode != null) {
-
       Flight flight = currentNode.getValue();
-
-      if (flight.getSites() > 0) {
-        availableFlights.adiFinal(flight);
+      if (date.verifyDate(flight.getDepartureTime())) {
+        if (flight.getSites() > 0) {
+          availableFlights.adiFinal(flight);
+        }
+      } else if (time.verifyHour(flight.getDepartureHour())) {
+        if (flight.getSites() > 0) {
+          availableFlights.adiFinal(flight);
+        }
       }
 
       currentNode = currentNode.getNext();

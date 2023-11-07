@@ -30,16 +30,16 @@ public class CurrentDate {
     int day = Integer.parseInt(dateSplited[0]);
     int month = Integer.parseInt(dateSplited[1]);
     int year = Integer.parseInt(dateSplited[2]);
-    System.out.println(day + " " + currentDay);
-    System.out.println(month + " " + currentMonth);
-    System.out.println(year + " " + currentYear);
 
     if (currentYear > year)
       return false;
 
+    if (month == 12 && currentDay > day)
+      return true;
+
     if (currentMonth > month)
       return false;
-    //
+
     if (currentDay > day)
       return false;
 
