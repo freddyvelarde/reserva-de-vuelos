@@ -49,6 +49,10 @@ public class LS_NormalPassenger extends ListSimplePassenger {
   public void mostrar() {
     NodePassenger currentNode = head;
     int i = 1;
+    if (nroNodos() < 1) {
+      System.out.println("No passengers added yet.");
+      return;
+    }
 
     while (currentNode != null) {
       currentNode.getValue().mostrar();
