@@ -104,43 +104,6 @@ public class LS_NormalFlight extends ListSimpleFlight {
     size--;
     return value;
   }
-  // public NodeFlight eliFinal() {
-  //   NodeFlight lastElement = new NodeFlight();
-  //
-  //   if (!this.esVacia()) {
-  //     if (this.nroNodos() == 1) {
-  //       lastElement = head;
-  //       head = null;
-  //     } else {
-  //       NodeFlight currentNode_1 = head;
-  //       NodeFlight currentNode_2 = head;
-  //
-  //       while (currentNode_1.getNext() != null) {
-  //         currentNode_2 = currentNode_1;
-  //         currentNode_1 = currentNode_1.getNext();
-  //       }
-  //       lastElement = currentNode_1;
-  //       currentNode_2.setNext(null);
-  //     }
-  //   }
-  //   return lastElement;
-  // }
-
-  /* public void leer1(int n) { */
-  /*   for (int i = 1; i <= n; i++) { */
-  /*     Flight z = new Flight(); */
-  /*     z.leer(); */
-  /*     adiPrincipio(z); */
-  /*   } */
-  /* } */
-  /*  */
-  /* public void leer2(int n) { */
-  /*   for (int i = 1; i <= n; i++) { */
-  /*     Flight z = new Flight(); */
-  /*     z.leer(); */
-  /*     adiFinal(z); */
-  /*   } */
-  /* } */
 
   public int nroNodos() { return size; }
 }

@@ -99,43 +99,6 @@ public class LS_NormalPassenger extends ListSimplePassenger {
     size--;
     return value;
   }
-  // public NodePassenger eliFinal() {
-  //   NodePassenger lastElement = new NodePassenger();
-  //
-  //   if (!this.esVacia()) {
-  //     if (this.nroNodos() == 1) {
-  //       lastElement = head;
-  //       head = null;
-  //     } else {
-  //       NodePassenger currentNode_1 = head;
-  //       NodePassenger currentNode_2 = head;
-  //
-  //       while (currentNode_1.getNext() != null) {
-  //         currentNode_2 = currentNode_1;
-  //         currentNode_1 = currentNode_1.getNext();
-  //       }
-  //       lastElement = currentNode_1;
-  //       currentNode_2.setNext(null);
-  //     }
-  //   }
-  //   return lastElement;
-  // }
-
-  /* public void leer1(int n) { */
-  /*   for (int i = 1; i <= n; i++) { */
-  /*     Passenger z = new Passenger(); */
-  /*     z.leer(); */
-  /*     adiPrincipio(z); */
-  /*   } */
-  /* } */
-  /*  */
-  /* public void leer2(int n) { */
-  /*   for (int i = 1; i <= n; i++) { */
-  /*     Passenger z = new Passenger(); */
-  /*     z.leer(); */
-  /*     adiFinal(z); */
-  /*   } */
-  /* } */
 
   public int nroNodos() { return size; }
 }
