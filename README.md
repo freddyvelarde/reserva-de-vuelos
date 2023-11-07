@@ -14,5 +14,5 @@
 - [x] `createNewPassenger()`
 - [x] `createNewReservation()`
 - [x] `flightHistoryByPassenger()`
-- [ ] `getReservationsByDate()`
+- [x] `getReservationsByDate()`
 - [ ] `getReservationsBySourceAndDestination()`

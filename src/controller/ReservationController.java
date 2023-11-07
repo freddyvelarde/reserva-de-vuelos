@@ -4,6 +4,7 @@ import entity.flight.LS_NormalFlight;
 import entity.flight.NodeFlight;
 import entity.flightReservation.FlightReservation;
 import entity.flightReservation.LS_NormalFlightReservation;
+import entity.flightReservation.NodeFlightReservation;
 import repository.FileHandler;
 import service.impl.FlightReservationServiceImpl;
 import service.impl.FlightServiceImpl;
@@ -53,5 +54,22 @@ public class ReservationController {
     }
     System.out.println("Flight with number: " +
                        flightReservation.getFlightNumber() + ", no available.");
+  }
+
+  public LS_NormalFlight getReservationByDate(String date) {
+    LS_NormalFlight flights = new FlightServiceImpl().getAllFlights();
+    LS_NormalFlight flightsByDate = new LS_NormalFlight();
+
+    NodeFlight currentNode = flights.getHead();
+
+    while (currentNode != null) {
+      Flight flight = currentNode.getValue();
+
+      if (flight.getDepartureTime().equals(date))
+        flightsByDate.adiFinal(flight);
+
+      currentNode = currentNode.getNext();
+    }
+    return flightsByDate;
   }
 }
