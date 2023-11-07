@@ -3,8 +3,10 @@ import entity.flightReservation.FlightReservation;
 
 class Main {
   public static void main(String[] args) {
-    ReservationController r = new ReservationController();
-    FlightReservation f = new FlightReservation("BO123", 13827575, 420, 3);
-    r.createNewReservation(f);
+    FlightReservation r = new FlightReservation("Bi123", 12345678, 420, 5);
+    ReservationController reservation = new ReservationController();
+    reservation.createNewReservation(r);
+
+    /* reservation.flightHistoryByPassenger(13827575).mostrar(); */
   }
 }

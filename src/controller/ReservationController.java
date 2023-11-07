@@ -3,6 +3,7 @@ import entity.flight.Flight;
 import entity.flight.LS_NormalFlight;
 import entity.flight.NodeFlight;
 import entity.flightReservation.FlightReservation;
+import entity.flightReservation.LS_NormalFlightReservation;
 import repository.FileHandler;
 import service.impl.FlightReservationServiceImpl;
 import service.impl.FlightServiceImpl;
@@ -10,6 +11,18 @@ import service.impl.FlightServiceImpl;
 public class ReservationController {
   private FlightReservationServiceImpl reservations =
       new FlightReservationServiceImpl();
+
+  public LS_NormalFlightReservation flightHistoryByPassenger(int ci) {
+    LS_NormalFlightReservation reservationsByPassenger =
+        reservations.flightHistoryByPassenger(ci);
+
+    if (reservationsByPassenger.nroNodos() < 1) {
+
+      System.out.println("Empty history for: " + ci);
+    }
+
+    return reservationsByPassenger;
+  }
 
   public void createNewReservation(FlightReservation flightReservation) {
     FlightServiceImpl flights = new FlightServiceImpl();
@@ -33,10 +46,12 @@ public class ReservationController {
           System.out.println("No seats available, for flight: " +
                              flightReservation.getFlightNumber());
         }
-        break;
+        return;
       }
 
       currentNode = currentNode.getNext();
     }
+    System.out.println("Flight with number: " +
+                       flightReservation.getFlightNumber() + ", no available.");
   }
 }
