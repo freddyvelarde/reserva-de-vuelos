@@ -4,18 +4,18 @@ public class FlightReservation {
   private String flightNumber;
   private int ci;
   private double totalPrice;
-  private int seats;
+  private int sites;
 
   public FlightReservation(String flightNumber, int ci, double totalPrice,
-                           int seats) {
+                           int sites) {
     this.flightNumber = flightNumber;
     this.ci = ci;
-    this.seats = seats;
-    this.totalPrice = totalPrice * seats;
+    this.sites = sites;
+    this.totalPrice = totalPrice * sites;
   }
 
-  public void setSeats(int seats) { this.seats = seats; }
-  public int getSeats() { return seats; }
+  public void setSites(int sites) { this.sites = sites; }
+  public int getSites() { return sites; }
 
   public String getFlightNumber() { return flightNumber; }
 
@@ -25,7 +25,7 @@ public class FlightReservation {
   public void setCi(int ci) { this.ci = ci; }
 
   public void setTotalPrice(double totalPrice) {
-    this.totalPrice = totalPrice * seats;
+    this.totalPrice = totalPrice * sites;
   }
 
   public void mostrar() {
@@ -33,9 +33,9 @@ public class FlightReservation {
     System.out.println("flight number: " + flightNumber);
     System.out.println("ci: " + ci);
     System.out.println("total Price: " + totalPrice);
-    System.out.println("seats: " + seats);
+    System.out.println("sites: " + sites);
   }
   public String parseDataToCSVFormat() {
-    return flightNumber + "," + ci + "," + totalPrice + "," + seats;
+    return flightNumber + "," + ci + "," + totalPrice + "," + sites;
   }
 }

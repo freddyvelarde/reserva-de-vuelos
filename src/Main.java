@@ -6,6 +6,7 @@ class Main {
     FlightReservation f = new FlightReservation("BO123", 13827575, 100.0, 5);
     // f.mostrar();
     ReservationController r = new ReservationController();
-    r.createNewReservation(f);
+    /* r.createNewReservation(f); */
+    r.getFlightHistoryByPassenger(13827575).mostrar();
   }
 }

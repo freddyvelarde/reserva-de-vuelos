@@ -8,5 +8,5 @@ public interface FlightService {
 
   LS_NormalFlight getAllFlights();
 
-  void updateNumberOfSeats(int numberOfSeats, String flightNumber);
+  void updateNumberOfSites(int numberOfSites, String flightNumber);
 }

@@ -1,35 +1,35 @@
 package entity.flight;
 
 public class Flight {
-  private String flightNumber;
+  private String flightNumber; // Unique id
   private String source;
   private String destination;
   private String departureDate;
   private String departureHour;
-  private int numberOfSeats;
+  private int sites;
   private double price;
 
   public Flight(String flightNumber, String source, String destination,
-                String departureDate, String departureHour, int numberOfSeats,
+                String departureDate, String departureHour, int sites,
                 double price) {
     this.flightNumber = flightNumber;
     this.source = source;
     this.destination = destination;
     this.departureDate = departureDate;
     this.departureHour = departureHour;
-    this.numberOfSeats = numberOfSeats;
+    this.sites = sites;
     this.price = price;
   }
   public Flight() {}
 
-  public int updateNumberOfSeats(int numberOfSeatsBuyed) {
-    if (numberOfSeats >= 1)
-      this.numberOfSeats = this.numberOfSeats - numberOfSeatsBuyed;
+  public int updateNumberOfSites(int sitesBuyed) {
+    if (sites >= 1)
+      this.sites = this.sites - sitesBuyed;
 
-    if (numberOfSeats <= 0)
-      this.numberOfSeats = 0;
+    if (sites <= 0)
+      this.sites = 0;
 
-    return this.numberOfSeats;
+    return this.sites;
   }
 
   public String getDepartureHour() { return departureHour; }
@@ -37,10 +37,8 @@ public class Flight {
     this.departureHour = departureHour;
   }
 
-  public int getNumberOfSeats() { return numberOfSeats; }
-  public void setNumberOfSeats(int numberOfSeats) {
-    this.numberOfSeats = numberOfSeats;
-  }
+  public int getSites() { return sites; }
+  public void setSites(int sites) { this.sites = sites; }
 
   public void setDepartureTime(String departureDate) {
     this.departureDate = departureDate;
@@ -65,7 +63,7 @@ public class Flight {
 
   public String parseDataToCSVFormat() {
     return flightNumber + "," + source + "," + destination + "," +
-        departureDate + "," + departureHour + "," + numberOfSeats + "," + price;
+        departureDate + "," + departureHour + "," + sites + "," + price;
   }
 
   public void mostrar() {
@@ -74,7 +72,7 @@ public class Flight {
     System.out.println("arrival airport: " + destination);
     System.out.println("departure date: " + departureDate);
     System.out.println("departure hour" + departureHour);
-    System.out.println("number of seats: " + numberOfSeats);
+    System.out.println("number of sites: " + sites);
     System.out.println("price" + price);
   }
 }

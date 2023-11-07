@@ -37,10 +37,10 @@ public class ReservationController {
 
       if (flight.getFlightNumber().equals(
               flightReservation.getFlightNumber())) {
-        if (flight.getNumberOfSeats() >= flightReservation.getSeats()) {
+        if (flight.getSites() >= flightReservation.getSites()) {
           this.reservations.createNewReservation(flightReservation);
 
-          flights.updateNumberOfSeats(flightReservation.getSeats(),
+          flights.updateNumberOfSites(flightReservation.getSites(),
                                       flightReservation.getFlightNumber());
           System.out.println("new reservations just created successfully.");
         } else {
