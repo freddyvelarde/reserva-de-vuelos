@@ -21,8 +21,9 @@ public class FlightServiceImpl implements FlightService {
     Flight flight = null;
     for (String[] data : flightCSV) {
       if (data[0].equals(flightNumber)) {
-        flight = new Flight(data[0], data[1], data[2], data[3],
-                            Integer.parseInt(data[4]));
+        flight =
+            new Flight(data[0], data[1], data[2], data[3], data[4],
+                       Integer.parseInt(data[5]), Double.parseDouble(data[6]));
         flight.updateNumberOfSeats(numberOfSeats);
       }
     }

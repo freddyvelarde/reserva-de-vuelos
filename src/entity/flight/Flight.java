@@ -1,19 +1,24 @@
 package entity.flight;
 
 public class Flight {
-  protected String flightNumber;
-  protected String source;
-  protected String destination;
-  protected String departureTime;
-  protected int numberOfSeats;
+  private String flightNumber;
+  private String source;
+  private String destination;
+  private String departureDate;
+  private String departureHour;
+  private int numberOfSeats;
+  private double price;
 
   public Flight(String flightNumber, String source, String destination,
-                String departureTime, int numberOfSeats) {
+                String departureDate, String departureHour, int numberOfSeats,
+                double price) {
     this.flightNumber = flightNumber;
     this.source = source;
     this.destination = destination;
-    this.departureTime = departureTime;
+    this.departureDate = departureDate;
+    this.departureHour = departureHour;
     this.numberOfSeats = numberOfSeats;
+    this.price = price;
   }
   public Flight() {}
 
@@ -27,15 +32,20 @@ public class Flight {
     return this.numberOfSeats;
   }
 
+  public String getDepartureHour() { return departureHour; }
+  public void setDepartureHour(String departureHour) {
+    this.departureHour = departureHour;
+  }
+
   public int getNumberOfSeats() { return numberOfSeats; }
   public void setNumberOfSeats(int numberOfSeats) {
     this.numberOfSeats = numberOfSeats;
   }
 
-  public void setDepartureTime(String departureTime) {
-    this.departureTime = departureTime;
+  public void setDepartureTime(String departureDate) {
+    this.departureDate = departureDate;
   }
-  public String getDepartureTime() { return departureTime; }
+  public String getDepartureTime() { return departureDate; }
 
   public String getFlightNumber() { return flightNumber; }
 
@@ -55,14 +65,16 @@ public class Flight {
 
   public String parseDataToCSVFormat() {
     return flightNumber + "," + source + "," + destination + "," +
-        departureTime + "," + numberOfSeats;
+        departureDate + "," + departureHour + "," + numberOfSeats + "," + price;
   }
 
   public void mostrar() {
     System.out.println("flight number: " + flightNumber);
     System.out.println("departure airport: " + source);
     System.out.println("arrival airport: " + destination);
-    System.out.println("departureTime: " + departureTime);
+    System.out.println("departure date: " + departureDate);
+    System.out.println("departure hour" + departureHour);
     System.out.println("number of seats: " + numberOfSeats);
+    System.out.println("price" + price);
   }
 }
