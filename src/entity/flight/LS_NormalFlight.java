@@ -50,6 +50,11 @@ public class LS_NormalFlight extends ListSimpleFlight {
     NodeFlight currentNode = head;
     int i = 1;
 
+    if (nroNodos() < 1) {
+      System.out.println("No flights added yet.");
+      return;
+    }
+
     while (currentNode != null) {
       currentNode.getValue().mostrar();
       System.out.println("Node nro: " + i);

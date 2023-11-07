@@ -6,8 +6,10 @@ class Main {
     FlightReservation r = new FlightReservation("Bi123", 12345678, 420, 5);
     ReservationController reservation = new ReservationController();
     /* reservation.createNewReservation(r); */
-    reservation.getReservationByDate("2023-11-07").mostrar();
+    reservation.getReservationsByDate("2023-11-07").mostrar();
+    /* reservation.getFlightsBySourceAndDestination("Santa Cruz", "La Paz") */
+    /*     .mostrar(); */
 
-    /* reservation.flightHistoryByPassenger(13827575).mostrar(); */
+    /* reservation.getFlightHistoryByPassenger(13827575).mostrar(); */
   }
 }

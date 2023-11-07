@@ -13,7 +13,7 @@ public class ReservationController {
   private FlightReservationServiceImpl reservations =
       new FlightReservationServiceImpl();
 
-  public LS_NormalFlightReservation flightHistoryByPassenger(int ci) {
+  public LS_NormalFlightReservation getFlightHistoryByPassenger(int ci) {
     LS_NormalFlightReservation reservationsByPassenger =
         reservations.flightHistoryByPassenger(ci);
 
@@ -56,7 +56,24 @@ public class ReservationController {
                        flightReservation.getFlightNumber() + ", no available.");
   }
 
-  public LS_NormalFlight getReservationByDate(String date) {
+  public LS_NormalFlight getFlightsBySourceAndDestination(String source,
+                                                          String destination) {
+    LS_NormalFlight flights = new FlightServiceImpl().getAllFlights();
+    LS_NormalFlight flightsBySourceAndDestination = new LS_NormalFlight();
+
+    NodeFlight currentNode = flights.getHead();
+
+    while (currentNode != null) {
+      Flight flight = currentNode.getValue();
+      if (flight.getSource().equals(source) &&
+          flight.getDestination().equals(destination))
+        flightsBySourceAndDestination.adiFinal(flight);
+      currentNode = currentNode.getNext();
+    }
+    return flightsBySourceAndDestination;
+  }
+
+  public LS_NormalFlight getReservationsByDate(String date) {
     LS_NormalFlight flights = new FlightServiceImpl().getAllFlights();
     LS_NormalFlight flightsByDate = new LS_NormalFlight();
 

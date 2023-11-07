@@ -11,8 +11,9 @@
 
 ## Features:
 
-- [x] `createNewPassenger()`
+<!-- - [x] `createNewPassenger()` -->
+
 - [x] `createNewReservation()`
 - [x] `flightHistoryByPassenger()`
 - [x] `getReservationsByDate()`
-- [ ] `getReservationsBySourceAndDestination()`
+- [x] `getReservationsBySourceAndDestination()`
