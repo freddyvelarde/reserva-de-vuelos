@@ -20,6 +20,8 @@
 
 ## Datos:
 
+> Todos los datos se guardan en archivos `.csv` simulando una base de datos.
+
 Vuelos:
 
 | Flight_number | Source     | Destination | Date       | Time  | Sites | Price |
